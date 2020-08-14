@@ -19,6 +19,7 @@ if(consent == "Yes"){
     alert("INVALID INPUTE");
 }
 */
+
 /**************************************** 
  * let job = "Teacher"
 
@@ -37,6 +38,7 @@ switch (job) {
         break;
 }*/
 
+/********** Coding Challege 2 
 var avgJ, avgM, avgG;
 
 avgJ = (89 + 120 + 103) / 3; //312
@@ -53,4 +55,14 @@ if (avgJ > avgM && avgJ > avgG) {
     console.log("Tie Tie Tie");
 }
 console.log("END");
+*/
 
+function age(bYear) {
+    return 2020 - bYear;
+}
+function yearsToRetiremtnt(firstName, birthYear) {
+    var yearsLeft = 65 - age(birthYear);
+    console.log(firstName + " year's left for retirment are " + yearsLeft);
+}
+
+yearsToRetiremtnt("Shubham", 1997)

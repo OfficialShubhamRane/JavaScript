@@ -19,6 +19,38 @@ if(consent == "Yes"){
     alert("INVALID INPUTE");
 }
 */
+/**************************************** 
+ * let job = "Teacher"
 
+switch (job) {
+    case "Teacher":
+        console.log("Teacher he is");
+        break;
+    case "Desiger":
+        console.log("Desinger he is");
+        break;
+    case "Dancer":
+        console.log("Dancer he is");
+        break;
+    default:
+        console.log("Invalid Input");
+        break;
+}*/
 
+var avgJ, avgM, avgG;
+
+avgJ = (89 + 120 + 103) / 3; //312
+avgM = (116 + 94 + 123) / 3; //333
+avgG = (94 + 134 + 105) / 3; //333
+
+if (avgJ > avgM && avgJ > avgG) {
+    console.log("John wins with average score of " + avgJ );
+} else if(avgM > avgJ && avgM > avgG) {
+    console.log("Mike wins with average score of " + avgM);
+} else if(avgG > avgM && avgG > avgJ) {
+    console.log("Gloria wins with average score of " + avgG);
+} else if (avgJ == avgM || avgJ == avgG || avgM == avgG) {
+    console.log("Tie Tie Tie");
+}
+console.log("END");
 

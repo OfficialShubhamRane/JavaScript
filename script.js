@@ -1,5 +1,5 @@
-/*******************************
- * console.log, prompt, alert
+/*************************************
+console.log, prompt, alert
 var firstName = "Shubham";
 var age = 22;
 
@@ -21,8 +21,7 @@ if(consent == "Yes"){
 */
 
 /**************************************** 
- * let job = "Teacher"
-
+let job = "Teacher"
 switch (job) {
     case "Teacher":
         console.log("Teacher he is");
@@ -38,9 +37,8 @@ switch (job) {
         break;
 }*/
 
-/********** Coding Challege 2 
+/************************** Coding Challege 2 
 var avgJ, avgM, avgG;
-
 avgJ = (89 + 120 + 103) / 3; //312
 avgM = (116 + 94 + 123) / 3; //333
 avgG = (94 + 134 + 105) / 3; //333
@@ -57,12 +55,51 @@ if (avgJ > avgM && avgJ > avgG) {
 console.log("END");
 */
 
+/********************** Function Declaration & Function Expressor
 function age(bYear) {
     return 2020 - bYear;
 }
-function yearsToRetiremtnt(firstName, birthYear) {
+var string = function yearsToRetiremtnt(firstName, birthYear) {
     var yearsLeft = 65 - age(birthYear);
-    console.log(firstName + " year's left for retirment are " + yearsLeft);
+    var isRetired = (age(birthYear) >= 65) ? true : false;
+    if(isRetired) 
+    { return firstName + " is already retired.";}else
+    { return firstName + " year's left for retirment are " + yearsLeft;}
+    
 }
 
-yearsToRetiremtnt("Shubham", 1997)
+console.log(string("Shubham", 1998));
+*/
+
+/**************************************Coding challege 3: Tip Calculator */
+var bills = [124,48,268];
+var allTips = new Array();
+var allFinalBills = new Array();
+var bill;
+
+function onlyTips(bill) {
+     if (0 < bill < 50) {
+        return bill * 0.2; 
+     }else if( 50 <= bill < 200){
+        return bill * 0.15;
+     }else if (bill >= 200){
+        return bill * 0.10;
+     }
+}
+var tip, currentBill;
+function finalBill(tip, currentBill) {
+    return tip + currentBill;
+}
+
+allTips.push(onlyTips(bills[0]));
+allTips.push(onlyTips(bills[1]));
+allTips.push(onlyTips(bills[2]));
+console.log(allTips);
+
+allFinalBills.push(allTips[0] + bills[0]);
+allFinalBills.push(allTips[1] + bills[1]);
+allFinalBills.push(allTips[2] + bills[2]);
+console.log(allFinalBills);
+ 
+
+ 

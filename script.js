@@ -75,30 +75,27 @@ console.log(string("Shubham", 1998));
 var bills = [124,48,268];
 var allTips = new Array();
 var allFinalBills = new Array();
-var bill;
+
 
 function onlyTips(bill) {
-     if (0 < bill < 50) {
-        return bill * 0.2; 
+     if (bill < 50) {
+        return bill * .2; 
      }else if( 50 <= bill < 200){
-        return bill * 0.15;
-     }else if (bill >= 200){
-        return bill * 0.10;
+        return bill * .15;
+     }else{
+        return .1 * bill;
      }
-}
-var tip, currentBill;
-function finalBill(tip, currentBill) {
-    return tip + currentBill;
 }
 
 allTips.push(onlyTips(bills[0]));
 allTips.push(onlyTips(bills[1]));
 allTips.push(onlyTips(bills[2]));
-console.log(allTips);
 
 allFinalBills.push(allTips[0] + bills[0]);
 allFinalBills.push(allTips[1] + bills[1]);
 allFinalBills.push(allTips[2] + bills[2]);
+
+console.log(allTips);
 console.log(allFinalBills);
  
 

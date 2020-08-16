@@ -37,7 +37,7 @@ switch (job) {
         break;
 }*/
 
-/************************** Coding Challege 2 
+/**************************************************** Coding Challege 2 
 var avgJ, avgM, avgG;
 avgJ = (89 + 120 + 103) / 3; //312
 avgM = (116 + 94 + 123) / 3; //333
@@ -55,7 +55,7 @@ if (avgJ > avgM && avgJ > avgG) {
 console.log("END");
 */
 
-/********************** Function Declaration & Function Expressor
+/************************************** Function Declaration & Function Expressor
 function age(bYear) {
     return 2020 - bYear;
 }
@@ -71,7 +71,7 @@ var string = function yearsToRetiremtnt(firstName, birthYear) {
 console.log(string("Shubham", 1998));
 */
 
-/**************************************Coding challege 3: Tip Calculator */
+/************************************** Coding challege 3: Tip Calculator 
 var bills = [124,48,268];
 var allTips = new Array();
 var allFinalBills = new Array();
@@ -83,7 +83,7 @@ function onlyTips(bill) {
      }else if( 50 <= bill < 200){
         return bill * .15;
      }else{
-        return .1 * bill;
+        return bill * .1;               //Calculation error here
      }
 }
 
@@ -97,6 +97,32 @@ allFinalBills.push(allTips[2] + bills[2]);
 
 console.log(allTips);
 console.log(allFinalBills);
- 
+*/
+
+/****************************************** Objects  */
+var shubham = {                                     // way 1 Declaration
+    fName : "Shubham",
+    lName : "Rane",
+    job: "Student",
+    bYear: 1997,
+    family: ["Smita", "Rajan", "Adwait"],
+    calcAge: function() {                           // function expression
+        this.age = 2018 - this.bYear;               // USE OF this KEYWORD
+    }
+};
+
+var john = new Object();                            // way 2 Declaration
+john.fName = "John";
+john.lName = "Raymond"
+
+console.log(shubham.fName);                         // way 1 extraction
+console.log(shubham["lName"]);                      // way 2 extraction
+
+shubham.job = "Developer";                          // modification
+shubham.bMonth = "Sept";                            // insertion
+shubham.calcAge();                                  // function call
+console.log(shubham);
+
+
 
  

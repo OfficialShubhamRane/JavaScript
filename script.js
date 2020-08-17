@@ -71,7 +71,7 @@ var string = function yearsToRetiremtnt(firstName, birthYear) {
 console.log(string("Shubham", 1998));
 */
 
-/************************************** Coding challege 3: Tip Calculator 
+/* ********************************************** Coding challege 3: Tip Calculator 
 var bills = [124,48,268];
 var allTips = new Array();
 var allFinalBills = new Array();
@@ -80,7 +80,7 @@ var allFinalBills = new Array();
 function onlyTips(bill) {
      if (bill < 50) {
         return bill * .2; 
-     }else if( 50 <= bill < 200){
+     }else if( bill >= 50 && bill < 200){
         return bill * .15;
      }else{
         return bill * .1;               //Calculation error here
@@ -97,10 +97,10 @@ allFinalBills.push(allTips[2] + bills[2]);
 
 console.log(allTips);
 console.log(allFinalBills);
-*/
+ */
 
-/****************************************** Objects  */
-var shubham = {                                     // way 1 Declaration
+/***************************************** Objects  */
+/* var shubham = {                                     // way 1 Declaration
     fName : "Shubham",
     lName : "Rane",
     job: "Student",
@@ -121,8 +121,32 @@ console.log(shubham["lName"]);                      // way 2 extraction
 shubham.job = "Developer";                          // modification
 shubham.bMonth = "Sept";                            // insertion
 shubham.calcAge();                                  // function call
-console.log(shubham);
+console.log(shubham); */
 
 
-
+/**************************************Coding Challege 4 */
  
+var john = {
+    fullName : "John Snow",
+    mass : 75,
+    height : 1.8,
+    calcBMI : function() {
+        this.bmi = this.mass / (this.height * this.height);
+    }
+};
+
+var mark = {
+    fullName : "Mark Er",
+    mass : 60,
+    height : 1.8,
+    calcBMI : function(){
+        this.bmi = this.mass / (this.height * this.height);
+    }
+};
+john.calcBMI();
+mark.calcBMI();
+
+(john.bmi > mark.bmi) 
+? console.log(john.fullName + " has greater BMI than " + mark.fullName)
+: console.log(mark.fullName + " has greater BMI than " + john.fullName) 
+

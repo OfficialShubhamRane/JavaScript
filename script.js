@@ -128,7 +128,7 @@ console.log(shubham); */
  
 var john = {
     fullName : "John Snow",
-    mass : 75,
+    mass : 60,
     height : 1.8,
     calcBMI : function() {
         this.bmi = this.mass / (this.height * this.height);
@@ -145,6 +145,10 @@ var mark = {
 };
 john.calcBMI();
 mark.calcBMI();
+
+(john.bmi == mark.bmi)
+? console.log("Its a tie") 
+: 
 
 (john.bmi > mark.bmi) 
 ? console.log(john.fullName + " has greater BMI than " + mark.fullName)

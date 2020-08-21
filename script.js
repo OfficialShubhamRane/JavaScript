@@ -83,7 +83,7 @@ function onlyTips(bill) {
      }else if( bill >= 50 && bill < 200){
         return bill * .15;
      }else{
-        return bill * .1;               //Calculation error here
+        return bill * .1;               
      }
 }
 
@@ -126,31 +126,61 @@ console.log(shubham); */
 
 /**************************************Coding Challege 4 */
  
-var john = {
+/* var john = {
     fullName : "John Snow",
     mass : 60,
     height : 1.8,
     calcBMI : function() {
         this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
     }
 };
 
 var mark = {
     fullName : "Mark Er",
-    mass : 60,
+    mass : 75,
     height : 1.8,
     calcBMI : function(){
         this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
     }
 };
-john.calcBMI();
-mark.calcBMI();
 
-(john.bmi == mark.bmi)
-? console.log("Its a tie") 
-: 
+(john.calcBMI() == mark.calcBMI())          // method called and used at te same time
+? console.log("Its a tie")
+:
 
-(john.bmi > mark.bmi) 
+(john.bmi > mark.bmi)                       // used values returned by methods
 ? console.log(john.fullName + " has greater BMI than " + mark.fullName)
-: console.log(mark.fullName + " has greater BMI than " + john.fullName) 
+: console.log(mark.fullName + " has greater BMI than " + john.fullName)
+ */
 
+ /************************************************ Coding Challenge 5 */
+
+
+
+var john = {
+    bills : [124, 48, 268, 180, 42],
+    calcTip : function(){
+        onlyTips = new Array();
+        finalBills = new Array();
+        for (let i = 0; i < this.bills.length; i++) {
+            if (this.bills[i] < 50) {
+                onlyTips[i] = this.bills[i] * .2; 
+                finalBills[i] = onlyTips[i] + this.bills[i];
+            }else if( this.bills[i] >= 50 && this.bills[i] < 200){
+                onlyTips[i] = this.bills[i] * .15;
+                finalBills[i] = onlyTips[i] + this.bills[i];
+            }else{
+                onlyTips[i] = this.bills[i] * .1;
+                finalBills[i] = onlyTips[i] + this.bills[i];           
+            }
+        }
+    }
+
+}
+john.calcTip();
+
+//console.log(bills);
+console.log(onlyTips);
+console.log(finalBills);

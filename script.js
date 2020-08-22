@@ -159,7 +159,8 @@ var mark = {
 
 
 
-var john = {
+var john = {                                          // john Object
+    fullName: "John Snow",
     bills : [124, 48, 268, 180, 42],
     calcTip : function(){
         onlyTips = new Array();
@@ -177,10 +178,53 @@ var john = {
             }
         }
     }
-
 }
-john.calcTip();
 
-//console.log(bills);
+var mark = {
+    fullName: "Mark Er",
+    bills : [77, 375, 110, 45],
+    calcTip : function(){
+        MonlyTips = new Array();
+        MfinalBills = new Array();
+        for (let i = 0; i < this.bills.length; i++) {
+            if (this.bills[i] < 100) {
+                MonlyTips[i] = this.bills[i] * .2; 
+                MfinalBills[i] = onlyTips[i] + this.bills[i];
+            }else if( this.bills[i] >= 100 && this.bills[i] < 300){
+                MonlyTips[i] = this.bills[i] * .1;
+                MfinalBills[i] = onlyTips[i] + this.bills[i];
+            }else{
+                MonlyTips[i] = this.bills[i] * .25;
+                MfinalBills[i] = onlyTips[i] + this.bills[i];           
+            }
+        }
+    }
+}
+
+function averageTipMaxima(finalBills, MfinalBills) {
+    var jTotal=0, mTotal=0;
+    finalBills.forEach(bill => {
+        jTotal = jTotal + bill;
+    });
+    avgForJohn = jTotal / finalBills.length;
+
+    MfinalBills.forEach(bill => {
+        mTotal = mTotal + bill;
+    });
+    avgForMark = mTotal / MfinalBills.length;
+
+    (avgForJohn > avgForMark)
+    ? console.log("John paid more")
+    : console.log("Mark paid more");
+}
+
+john.calcTip();
+mark.calcTip();
+
 console.log(onlyTips);
 console.log(finalBills);
+
+console.log(MonlyTips);
+console.log(MfinalBills);
+
+averageTipMaxima(finalBills, MfinalBills);

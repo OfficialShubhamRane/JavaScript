@@ -159,7 +159,7 @@ var mark = {
 
 
 
-var john = {                                          // john Object
+var john = {                                          // John Object
     fullName: "John Snow",
     bills : [124, 48, 268, 180, 42],
     calcTip : function(){
@@ -180,7 +180,7 @@ var john = {                                          // john Object
     }
 }
 
-var mark = {
+var mark = {                                        // Mark Object
     fullName: "Mark Er",
     bills : [77, 375, 110, 45],
     calcTip : function(){
@@ -201,21 +201,25 @@ var mark = {
     }
 }
 
-function averageTipMaxima(finalBills, MfinalBills) {
+function averageTipMaxima(finalBills, MfinalBills) {        //Average Calculator
     var jTotal=0, mTotal=0;
-    finalBills.forEach(bill => {
-        jTotal = jTotal + bill;
+    onlyTips.forEach(tip => {
+        //console.log("Johns total: " + jTotal);
+        jTotal = jTotal + tip;
     });
-    avgForJohn = jTotal / finalBills.length;
+    console.log("length of johns tips array : " + onlyTips.length);
+    avgForJohn = jTotal / (onlyTips.length);
 
-    MfinalBills.forEach(bill => {
-        mTotal = mTotal + bill;
+    MonlyTips.forEach(tip => {
+        //console.log("Marks total: " + mTotal);
+        mTotal = mTotal + tip;
     });
-    avgForMark = mTotal / MfinalBills.length;
+    console.log("length of marks tips array : " + MonlyTips.length);
+    avgForMark = mTotal / (MonlyTips.length);
 
     (avgForJohn > avgForMark)
-    ? console.log("John paid more")
-    : console.log("Mark paid more");
+    ? console.log("John paid more with tip average of : " + avgForJohn)
+    : console.log("Mark paid more with tip average of : " + avgForMark);
 }
 
 john.calcTip();
